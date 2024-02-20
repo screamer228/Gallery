@@ -18,7 +18,7 @@
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="65dp"
         android:text="@string/sign_in"
         android:textStyle="bold"
         android:textSize="30sp"
@@ -28,15 +28,13 @@
         android:id="@+id/TIL_signIn_email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints="@string/prompt_email"
-        android:hint="@string/prompt_email"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/email"
         android:textColorHint="@color/gray"
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/email_icon">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -48,14 +46,12 @@
         android:id="@+id/TIL_signIn_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:autofillHints="@string/prompt_email"
         android:hint="@string/password"
         android:textColorHint="@color/gray"
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/password_eye">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,7 +63,7 @@
         android:id="@+id/button_signIn_singIn"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="55dp"
         android:enabled="true"
         android:text="@string/sign_in"
         android:backgroundTint="@color/black"
@@ -75,10 +71,10 @@
         app:cornerRadius="10dp"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_signUp_signUp"
+        android:id="@+id/button_signIn_signUp"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:enabled="false"
+        android:enabled="true"
         android:text="@string/sign_up"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import com.example.gallery.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
@@ -24,5 +25,16 @@ class WelcomeFragment : Fragment() {
             setDisplayHomeAsUpEnabled(true)
         }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonCreateAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_welcomeFragment_to_signUpFragment2)
+        }
+        binding.buttonIHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_welcomeFragment_to_signInFragment)
+        }
     }
 }

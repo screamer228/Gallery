@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignInBinding
 
@@ -34,11 +35,9 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val usernameEditText = binding.TILSignInEmail
-        val passwordEditText = binding.TILSignInPassword
-        val signInButton = binding.buttonSignInSingIn
-        val signUpButton = binding.buttonSignUpSignUp
-        val loadingProgressBar = binding.loading
+        binding.buttonSignInSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment2)
+        }
 
     }
 }

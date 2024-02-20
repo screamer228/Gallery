@@ -46,8 +46,6 @@ dependencies {
     val moxyVersion = "2.2.2"
     implementation ("com.github.moxy-community:moxy:$moxyVersion")
     kapt ("com.github.moxy-community:moxy-compiler:$moxyVersion")
-    implementation ("com.github.moxy-community:moxy-app-compat:$moxyVersion")
-    implementation ("com.github.moxy-community:moxy-androidx:$moxyVersion")
     implementation ("com.github.moxy-community:moxy-material:$moxyVersion")
 
     //splashScreen

@@ -14,18 +14,25 @@
     android:paddingBottom="@dimen/fragment_vertical_margin"
     tools:context=".SignUpFragment">
 
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:text="@string/sign_up"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/black" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints="@string/prompt_email"
-        android:hint="@string/prompt_email"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/user_name"
         android:textColorHint="@color/gray"
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/email_icon">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -33,24 +40,109 @@
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
-        android:autofillHints="@string/prompt_email"
-        android:hint="@string/prompt_email"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/birthday"
         android:textColorHint="@color/gray"
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/email_icon">
-
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/phone_number"
+        android:textColorHint="@color/gray"
+        android:selectAllOnFocus="true"
+        app:boxStrokeColor="@color/gray"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/email_icon">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/gray"
+        android:selectAllOnFocus="true"
+        app:boxStrokeColor="@color/gray"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/email_icon">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/gray"
+        android:selectAllOnFocus="true"
+        app:boxStrokeColor="@color/gray"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/password_eye">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/confirm_password"
+        android:textColorHint="@color/gray"
+        android:selectAllOnFocus="true"
+        app:boxStrokeColor="@color/gray"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/password_eye">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/edit_text_border"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_signUp_signUp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:enabled="true"
+        android:text="@string/sign_up"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        app:cornerRadius="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_signUp_signIn"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:text="@string/sign_in"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:cornerRadius="10dp"/>
 
 </LinearLayout>
