@@ -5,7 +5,7 @@
     <color name="gray">#BCBCBC</color>
     <color name="gray_light">#EEEEEF</color>
     <color name="main">#CF497E</color>
-    <color name="gradient">#E69633, #CF497E</color>
+<!--    <color name="gradient">#E69633, #CF497E</color>-->
     <color name="error_red">#ED3E3E</color>
     <color name="blue">#409EFF</color>
 </resources>
