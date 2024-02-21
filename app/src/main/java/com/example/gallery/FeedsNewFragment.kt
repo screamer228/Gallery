@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.gallery.adapters.FeedsRecyclerAdapter
 import com.example.gallery.databinding.FragmentFeedsNewBinding
 
 class FeedsNewFragment : Fragment() {
