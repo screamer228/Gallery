@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.databinding.FragmentSignInBinding
 import com.example.gallery.databinding.FragmentSignUpBinding
@@ -30,6 +31,11 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val actionBar = (activity as AppCompatActivity).supportActionBar
+        actionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+        }
+
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,9 +43,11 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.buttonSignUpSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpFragment_to_mainFragment)
+        }
         binding.buttonSignUpSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment2)
         }
-
     }
 }

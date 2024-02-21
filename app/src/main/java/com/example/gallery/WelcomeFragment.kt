@@ -20,10 +20,8 @@ class WelcomeFragment : Fragment() {
     ): View {
         _binding = FragmentWelcomeBinding.inflate(layoutInflater)
 
-        val actionBar = (activity as AppCompatActivity).supportActionBar
-        actionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-        }
+
+
         return binding.root
     }
 
