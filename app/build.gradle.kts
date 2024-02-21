@@ -42,6 +42,9 @@ android {
 
 dependencies {
 
+    //coil
+    implementation("io.coil-kt:coil:2.5.0")
+
     //moxy
     val moxyVersion = "2.2.2"
     implementation ("com.github.moxy-community:moxy:$moxyVersion")
@@ -56,6 +59,7 @@ dependencies {
     implementation ("com.google.dagger:hilt-android:$hiltVersion")
     kapt ("com.google.dagger:hilt-compiler:$hiltVersion")
 
+    //navigation
     val navVersion = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")

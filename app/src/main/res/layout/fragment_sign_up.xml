@@ -32,12 +32,11 @@
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
-        app:endIconDrawable="@drawable/ic_email">
+        app:endIconDrawable="@drawable/ic_username">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/edit_text_border"
-            android:inputType="textEmailAddress"/>
+            android:background="@drawable/edit_text_border" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,12 +48,12 @@
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
-        app:endIconDrawable="@drawable/ic_email">
+        app:endIconDrawable="@drawable/ic_calendar">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="textEmailAddress"/>
+            android:inputType="date"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -66,12 +65,12 @@
         android:selectAllOnFocus="true"
         app:boxStrokeColor="@color/gray"
         app:endIconMode="custom"
-        app:endIconDrawable="@drawable/ic_email">
+        app:endIconDrawable="@drawable/ic_phone">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="textEmailAddress"/>
+            android:inputType="phone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -105,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -121,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
