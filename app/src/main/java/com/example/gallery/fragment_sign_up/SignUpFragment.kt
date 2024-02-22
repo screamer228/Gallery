@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignUpBinding
 import com.example.gallery.model.User
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import moxy.MvpAppCompatFragment
@@ -39,11 +40,6 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         savedInstanceState: Bundle?
     ): View {
 
-        val actionBar = (activity as AppCompatActivity).supportActionBar
-        actionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-        }
-
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -51,10 +47,19 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val toolbar = view.findViewById<MaterialToolbar>(R.id.signUp_toolbar)
+        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+        }
+
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         binding.signUpBirthday.editText?.setOnClickListener {
             showDatePicker()
         }
-
 
         binding.buttonSignUpSignUp.setOnClickListener {
             val user = User(
