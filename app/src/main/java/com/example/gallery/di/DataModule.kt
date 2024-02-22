@@ -2,9 +2,13 @@ package com.example.gallery.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.gallery.repository.RoomRepositoryImpl.Companion.DATABASE_NAME
-import com.example.gallery.room.UserDao
-import com.example.gallery.room.UserDatabase
+import com.example.gallery.fragment_sign_up.SignUpPresenter
+import com.example.gallery.data.mapper.UserMapper
+import com.example.gallery.data.repository.RoomRepositoryImpl
+import com.example.gallery.data.repository.RoomRepositoryImpl.Companion.DATABASE_NAME
+import com.example.gallery.data.room.UserDao
+import com.example.gallery.data.room.UserDatabase
+import com.example.gallery.repository.RoomRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +19,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class DataModule {
+
+    @Singleton
+    @Provides
+    fun provideSignUpPresenter(roomRepository: RoomRepository): SignUpPresenter {
+        return SignUpPresenter(roomRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun providesRoomRepository(userDao: UserDao): RoomRepository = RoomRepositoryImpl(
+        userDao, userMapper = UserMapper()
+    )
 
     @Singleton
     @Provides

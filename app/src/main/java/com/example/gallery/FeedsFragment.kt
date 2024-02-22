@@ -10,7 +10,9 @@ import com.example.gallery.adapters.ViewPagerAdapter
 import com.example.gallery.databinding.FragmentFeedsBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FeedsFragment : Fragment() {
 
     private lateinit var _binding: FragmentFeedsBinding

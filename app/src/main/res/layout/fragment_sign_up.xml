@@ -12,7 +12,7 @@
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
     android:paddingBottom="@dimen/fragment_vertical_margin"
-    tools:context=".SignUpFragment">
+    tools:context=".fragment_sign_up.SignUpFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
@@ -24,6 +24,7 @@
         android:textColor="@color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_username"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -40,6 +41,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_birthday"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -53,11 +55,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/edit_text_border"
-            android:inputType="date"/>
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_phone"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -75,6 +79,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -92,6 +97,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
@@ -109,6 +115,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_confirm_password"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/confirm_password"

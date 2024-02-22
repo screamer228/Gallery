@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gallery.adapters.FeedsRecyclerAdapter
 import com.example.gallery.databinding.FragmentFeedsNewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FeedsNewFragment : Fragment() {
 
     private lateinit var _binding: FragmentFeedsNewBinding

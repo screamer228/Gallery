@@ -1,4 +1,4 @@
-package com.example.gallery.room
+package com.example.gallery.data.room
 
 import android.provider.ContactsContract
 import androidx.room.TypeConverter
