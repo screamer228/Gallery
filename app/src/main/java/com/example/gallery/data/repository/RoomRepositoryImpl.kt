@@ -11,8 +11,8 @@ class RoomRepositoryImpl @Inject constructor(
 ) : RoomRepository {
 
 
-    override fun getUser(username: String, password: String): User? {
-        val userEntity = userDao.getUser(username, password)
+    override fun getUser(email: String): User? {
+        val userEntity = userDao.getUser(email)
         return userEntity?.let { userMapper.fromEntity(it) }
     }
 

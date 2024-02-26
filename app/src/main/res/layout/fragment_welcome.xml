@@ -15,9 +15,10 @@
     tools:context=".WelcomeFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_width="135dp"
+        android:layout_height="140dp"
+        android:src="@drawable/logo_welcome"
+        android:layout_marginBottom="30dp"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
@@ -44,7 +45,8 @@
         android:text="@string/i_already_have_an_account"
         android:backgroundTint="@color/white"
         android:textColor="@color/black"
-
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
         app:cornerRadius="10dp"/>
 
 </LinearLayout>

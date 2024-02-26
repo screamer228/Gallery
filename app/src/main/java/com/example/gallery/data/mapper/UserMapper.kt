@@ -6,22 +6,22 @@ import java.util.Date
 
 class UserMapper {
 
-    fun fromEntity(userEntity: UserEntity): User {
-        val birthday = userEntity.birthday?.let { Date(it) }
-        return User(
-            userName = userEntity.userName,
-            birthday = userEntity.birthday,
-            phoneNumber = userEntity.phoneNumber,
-            email = userEntity.email,
-            password = userEntity.password
-        )
+    fun fromEntity(userEntity: UserEntity?): User? {
+        return if (userEntity == null) null
+        else
+            User(
+                userName = userEntity.userName,
+                birthday = userEntity.birthday,
+                phoneNumber = userEntity.phoneNumber,
+                email = userEntity.email,
+                password = userEntity.password
+            )
     }
 
     fun toEntity(user: User): UserEntity {
-        val birthdayInMillis = user.birthday
         return UserEntity(
             userName = user.userName,
-            birthday = birthdayInMillis,
+            birthday = user.birthday,
             phoneNumber = user.phoneNumber,
             email = user.email,
             password = user.password

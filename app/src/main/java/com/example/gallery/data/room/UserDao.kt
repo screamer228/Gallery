@@ -8,8 +8,8 @@ import com.example.gallery.data.entity.UserEntity
 @Dao
 interface UserDao {
 
-    @Query("SELECT * FROM users WHERE username = :username AND password = :password")
-    fun getUser(username: String, password: String): UserEntity?
+    @Query("SELECT * FROM users WHERE email = :email")
+    fun getUser(email: String): UserEntity?
 
     @Insert
     fun insertUser(user: UserEntity)

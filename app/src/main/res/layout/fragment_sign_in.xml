@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".SignInFragment">
+    tools:context=".fragment_sign_in.SignInFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/signIn_toolbar"
@@ -32,11 +32,17 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/sign_in"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="@color/black" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            app:dividerColor="@color/error_red"
+            android:layout_marginBottom="60dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signIn_email"
