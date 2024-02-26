@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -18,6 +19,11 @@
         app:titleTextColor="@color/blue"
         app:navigationIcon="@drawable/ic_back"
         app:navigationIconTint="@color/blue"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:dividerColor="@color/gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,44 +53,37 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signIn_email"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            android:hint="@string/email"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
             app:endIconDrawable="@drawable/ic_email">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="textEmailAddress"/>
+                android:layout_height="50dp"
+                android:hint="@string/email"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signIn_password"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="@string/password"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_password_eye">
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
+            app:endIconDrawable="@drawable/ic_eye_on">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="textEmailAddress"/>
+                android:layout_height="50dp"
+                android:hint="@string/password"
+                android:autofillHints="password"
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_signIn_signIn"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="40dp"
             android:enabled="true"
             android:text="@string/sign_in"
             android:backgroundTint="@color/black"

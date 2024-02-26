@@ -8,4 +8,5 @@
 <!--    <color name="gradient">#E69633, #CF497E</color>-->
     <color name="error_red">#ED3E3E</color>
     <color name="blue">#409EFF</color>
+    <color name="transparent">#00000000</color>
 </resources>

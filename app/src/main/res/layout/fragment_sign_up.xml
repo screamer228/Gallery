@@ -18,6 +18,11 @@
         app:navigationIcon="@drawable/ic_back"
         app:navigationIconTint="@color/blue"/>
 
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:dividerColor="@color/gray"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,121 +46,103 @@
             android:layout_width="100dp"
             android:layout_height="2dp"
             app:dividerColor="@color/error_red"
-            android:layout_marginBottom="60dp"/>
+            android:layout_marginBottom="50dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_username"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/user_name"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_username">
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
+            app:endIconDrawable="@drawable/ic_email">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border" />
+                android:layout_height="50dp"
+                android:hint="@string/user_name"
+                android:autofillHints="username"
+                android:inputType="text"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_birthday"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/birthday"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
             app:endIconDrawable="@drawable/ic_calendar">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="none"
-                android:focusable="false"
-                android:clickable="true"/>
+                android:layout_height="50dp"
+                android:hint="@string/birthday"
+                android:autofillHints="birthday"
+                android:inputType="date"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_phone"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/phone_number"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
             app:endIconDrawable="@drawable/ic_phone">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="phone"/>
+                android:layout_height="50dp"
+                android:hint="@string/phone_number"
+                android:autofillHints="phone"
+                android:inputType="phone"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_email"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/email"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
             app:endIconDrawable="@drawable/ic_email">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="textEmailAddress"/>
+                android:layout_height="50dp"
+                android:hint="@string/email"
+                android:autofillHints="emailAddress"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_password"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/password"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_password_eye">
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
+            app:endIconDrawable="@drawable/ic_eye_on">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="textPassword"/>
+                android:layout_height="50dp"
+                android:hint="@string/password"
+                android:autofillHints="password"
+                android:inputType="textPassword"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUp_confirm_password"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="@string/confirm_password"
-            android:textColorHint="@color/gray"
-            android:selectAllOnFocus="true"
-            app:boxStrokeColor="@color/gray"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_password_eye">
+            android:layout_height="wrap_content"
+            style="@style/textInputLayout_style"
+            app:endIconDrawable="@drawable/ic_eye_on">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/edit_text_border"
-                android:inputType="textPassword"/>
+                android:layout_height="50dp"
+                android:hint="@string/confirm_password"
+                android:autofillHints="password"
+                android:inputType="textPassword"
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_signUp_signUp"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:enabled="true"
             android:text="@string/sign_up"
             android:backgroundTint="@color/black"

@@ -64,7 +64,7 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         binding.buttonSignUpSignUp.setOnClickListener {
             val user = User(
                 userName = binding.signUpUsername.editText?.text.toString(),
-                birthday = selectedDate,
+                birthday = binding.signUpBirthday.editText?.text.toString(),
                 phoneNumber = binding.signUpPhone.editText?.text.toString(),
                 email = binding.signUpEmail.editText?.text.toString(),
                 password = binding.signUpPassword.editText?.text.toString()
