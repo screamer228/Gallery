@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignInBinding
 import com.google.android.material.appbar.MaterialToolbar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
@@ -52,8 +53,12 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
 
 
         binding.buttonSignInSignIn.setOnClickListener {
-            val email = binding.signInEmail.editText?.text.toString()
-            presenter.signInClicked(email)
+            lifecycleScope.launch {
+                presenter.signInClicked(
+                    email = binding.signInEmail.editText?.text.toString(),
+                    password = binding.signInPassword.editText?.text.toString()
+                )
+            }
         }
 
         binding.buttonSignInSignUp.setOnClickListener {
@@ -69,7 +74,16 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
         findNavController().navigate(R.id.action_signInFragment_to_signUpFragment2)
     }
 
-    override fun showUserInsertionError() {
-        Toast.makeText(context, "Something wrong", Toast.LENGTH_SHORT).show()
+    override fun showUserInsertionError(state: SignInViewState) {
+        when (state) {
+
+            is SignInViewState.Email -> {
+                binding.signInEmail.error = state.error
+            }
+
+            is SignInViewState.Password -> {
+                binding.signInPassword.error = state.error
+            }
+        }
     }
 }

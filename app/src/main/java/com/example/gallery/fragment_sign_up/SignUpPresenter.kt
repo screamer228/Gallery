@@ -1,6 +1,6 @@
 package com.example.gallery.fragment_sign_up
 
-import com.example.gallery.ValidationSignUp
+import com.example.gallery.validation.ValidationSignUp
 import com.example.gallery.model.User
 import com.example.gallery.repository.RoomRepository
 import kotlinx.coroutines.Dispatchers
@@ -65,11 +65,8 @@ class SignUpPresenter @Inject constructor(
             viewState.showUserInsertionError(SignUpViewState.Password(passwordError))
             viewState.showUserInsertionError(SignUpViewState.ConfirmPassword(confirmPasswordError))
 
-            return@withContext userNameError == null
-                    && phoneNumberError == null
-                    && emailError == null
-                    && passwordError == null
+            return@withContext userNameError == null && phoneNumberError == null
+                    && emailError == null && passwordError == null
                     && confirmPasswordError == null
-
         }
 }

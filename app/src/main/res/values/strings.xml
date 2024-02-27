@@ -27,4 +27,6 @@
     <string name="sorry">Sorry!</string>
     <string name="no_pictures">This is no pictures.</string>
     <string name="come_back_later">Please come back later.</string>
+    <string name="invalid_password">invalid password</string>
+    <string name="user_not_found">user not found</string>
 </resources>

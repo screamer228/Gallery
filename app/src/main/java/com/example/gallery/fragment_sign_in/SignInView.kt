@@ -9,5 +9,5 @@ interface SignInView : MvpView {
 
     fun showMainScreen()
     fun showSignUpScreen()
-    fun showUserInsertionError()
+    fun showUserInsertionError(state: SignInViewState)
 }

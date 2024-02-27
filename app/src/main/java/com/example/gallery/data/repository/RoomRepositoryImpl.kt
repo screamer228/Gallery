@@ -11,12 +11,12 @@ class RoomRepositoryImpl @Inject constructor(
 ) : RoomRepository {
 
 
-    override fun getUser(email: String): User? {
+    override suspend fun getUser(email: String): User? {
         val userEntity = userDao.getUser(email)
         return userEntity?.let { userMapper.fromEntity(it) }
     }
 
-    override fun insertUser(user: User) {
+    override suspend fun insertUser(user: User) {
         userDao.insertUser(userMapper.toEntity(user))
     }
 

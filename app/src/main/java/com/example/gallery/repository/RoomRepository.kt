@@ -4,8 +4,8 @@ import com.example.gallery.model.User
 
 interface RoomRepository {
 
-    fun getUser(email: String) : User?
+    suspend fun getUser(email: String) : User?
 
-    fun insertUser(user: User)
+    suspend fun insertUser(user: User)
 
 }
