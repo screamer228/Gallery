@@ -20,7 +20,4 @@ class RoomRepositoryImpl @Inject constructor(
         userDao.insertUser(userMapper.toEntity(user))
     }
 
-    companion object{
-        const val DATABASE_NAME = "user-database"
-    }
 }

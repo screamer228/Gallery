@@ -19,4 +19,12 @@
     <string name="search">Search</string>
     <string name="New">New</string>
     <string name="Popular">Popular</string>
+    <string name="username_too_short">username is too short</string>
+    <string name="incorrect_number">incorrect phone number</string>
+    <string name="email_already_registered">email already registered</string>
+    <string name="password_less_then_8">password less than 8</string>
+    <string name="passwords_dont_match">passwords don\'t match</string>
+    <string name="sorry">Sorry!</string>
+    <string name="no_pictures">This is no pictures.</string>
+    <string name="come_back_later">Please come back later.</string>
 </resources>

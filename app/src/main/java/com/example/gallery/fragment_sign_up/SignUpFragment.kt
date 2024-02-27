@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignUpBinding
@@ -12,6 +13,7 @@ import com.example.gallery.model.User
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import java.text.SimpleDateFormat
@@ -62,15 +64,18 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         }
 
         binding.buttonSignUpSignUp.setOnClickListener {
-            val user = User(
-                userName = binding.signUpUsername.editText?.text.toString(),
-                birthday = binding.signUpBirthday.editText?.text.toString(),
-                phoneNumber = binding.signUpPhone.editText?.text.toString(),
-                email = binding.signUpEmail.editText?.text.toString(),
-                password = binding.signUpPassword.editText?.text.toString()
-            )
-            presenter.signUpClicked(user)
+            lifecycleScope.launch{
+                presenter.signUpClicked(
+                    userName = binding.signUpUsername.editText?.text.toString(),
+                    birthday = binding.signUpBirthday.editText?.text.toString(),
+                    phoneNumber = binding.signUpPhone.editText?.text.toString(),
+                    email = binding.signUpEmail.editText?.text.toString(),
+                    password = binding.signUpPassword.editText?.text.toString(),
+                    confirmPassword = binding.signUpConfirmPassword.editText?.text.toString()
+                )
+            }
         }
+
         binding.buttonSignUpSignIn.setOnClickListener {
             presenter.signInClicked()
         }
@@ -92,7 +97,27 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
     override fun showSignInScreen() {
         findNavController().navigate(R.id.action_signUpFragment_to_signInFragment2)
     }
-    override fun showUserInsertionError() {
-        TODO("Not yet implemented")
+    override fun showUserInsertionError(state: SignUpViewState) {
+        when (state) {
+            is SignUpViewState.UserName -> {
+                binding.signUpUsername.error = state.error
+            }
+
+            is SignUpViewState.Phone -> {
+                binding.signUpPhone.error = state.error
+            }
+
+            is SignUpViewState.Email -> {
+                binding.signUpEmail.error = state.error
+            }
+
+            is SignUpViewState.Password -> {
+                binding.signUpPassword.error = state.error
+            }
+
+            is SignUpViewState.ConfirmPassword -> {
+                binding.signUpConfirmPassword.error = state.error
+            }
+        }
     }
 }
