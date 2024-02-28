@@ -9,7 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Profile fragment"
-        android:textSize="30sp"/>
+        android:text="@string/profile_fragment"
+        android:textSize="@dimen/text_size_H1"
+        android:gravity="center"/>
 
 </FrameLayout>

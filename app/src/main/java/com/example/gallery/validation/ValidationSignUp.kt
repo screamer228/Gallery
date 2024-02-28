@@ -11,46 +11,44 @@ class ValidationSignUp(
     private val context: Context,
 ) {
     fun validateUserName(username: String): String? {
-        return if (username.length < 3) {
+        return if (username.length < 3)
             context.getString(R.string.username_too_short)
-        } else {
+        else
             null
-        }
     }
 
     fun validatePhoneNumber(phoneNumber: String): String? {
         val isCorrect: Boolean = phoneNumber.length == 12
-        return if (isCorrect) {
+        return if (isCorrect)
             null
-        } else {
+        else
             context.getString(R.string.incorrect_number)
-        }
     }
 
     suspend fun validateEmail(email: String): String? {
         var isAlreadyRegistered: Boolean
+
         withContext(Dispatchers.IO) {
             isAlreadyRegistered = roomRepository.getUser(email) != null
         }
-        return if(isAlreadyRegistered){
+
+        return if (isAlreadyRegistered)
             context.getString(R.string.email_already_registered)
-        } else
+        else
             null
     }
 
     fun validatePassword(password: String): String? {
-        return if (password.length < 8) {
+        return if (password.length < 8)
             context.getString(R.string.password_less_then_8)
-        } else {
+        else
             null
-        }
     }
 
     fun validateConfirmPassword(firstPassword: String, secondPassword: String): String? {
-        return if (firstPassword != secondPassword) {
+        return if (firstPassword != secondPassword)
             context.getString(R.string.passwords_dont_match)
-        } else {
+        else
             null
-        }
     }
 }

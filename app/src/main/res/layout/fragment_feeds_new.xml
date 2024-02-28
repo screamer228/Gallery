@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,4 +19,28 @@
         app:spanCount="2"
         tools:listitem="@layout/item_feeds" />
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/feeds_new_loading_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingBottom="50dp">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorColor="@color/gray"
+            app:trackThickness="1dp"
+            android:indeterminate="true"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textSize="@dimen/text_size_H4"
+            android:textColor="@color/gray"/>
+    </LinearLayout>
+</FrameLayout>

@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.gallery.databinding.ItemFeedsBinding
 
-class FeedsRecyclerAdapter(private val dataList: List<String>)
+class FeedsRecyclerAdapter
     : RecyclerView.Adapter<FeedsRecyclerAdapter.ViewHolder>() {
+
+    private var dataList: MutableList<String> = mutableListOf()
 
     class ViewHolder(
         private val binding: ItemFeedsBinding,
@@ -33,8 +35,8 @@ class FeedsRecyclerAdapter(private val dataList: List<String>)
         return dataList.size
     }
 
-//    fun updateList(charactersList: List<CharacterResultEntity>){
-//        dataList = charactersList.toMutableList()
-//        notifyDataSetChanged()
-//    }
+    fun updateList(imagesList: List<String>){
+        dataList = imagesList.toMutableList()
+        notifyDataSetChanged()
+    }
 }

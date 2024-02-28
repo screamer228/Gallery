@@ -31,4 +31,7 @@
     <string name="user_not_found">user not found</string>
     <string name="tablayout">TabLayout</string>
     <string name="cancel">Cancel</string>
+    <string name="loading">Loading...</string>
+    <string name="add_photo_fragment">Add photo fragment</string>
+    <string name="profile_fragment">Profile fragment</string>
 </resources>

@@ -14,27 +14,32 @@ class ValidationSignIn(
 
     suspend fun validateUsername(email: String): String? {
         val user: User?
+
         withContext(Dispatchers.IO) {
             user = databaseRepository.getUser(email)
         }
-        return if (user == null) {
+
+        return if (user == null)
             context.getString(R.string.user_not_found)
-        } else {
+        else
             null
-        }
     }
 
     suspend fun validatePassword(email: String, password: String): String? {
         val user: User?
+
         withContext(Dispatchers.IO) {
             user = databaseRepository.getUser(email)
         }
-        return if (user == null) {
+
+        return if (user == null){
             context.getString(R.string.invalid_password)
-        } else {
+        }
+        else {
             if (user.password != password) {
                 context.getString(R.string.invalid_password)
-            } else {
+            }
+            else {
                 null
             }
         }

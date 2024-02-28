@@ -5,11 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.AddPhotoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Add photo fragment"
-        android:textSize="30sp"/>
+        android:text="@string/add_photo_fragment"
+        android:textSize="@dimen/text_size_H1"
+        android:gravity="center"/>
 
 </FrameLayout>

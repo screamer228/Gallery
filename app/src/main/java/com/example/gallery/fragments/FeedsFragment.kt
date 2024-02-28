@@ -27,8 +27,6 @@ class FeedsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
-
         _binding = FragmentFeedsBinding.inflate(inflater, container, false)
         return binding.root
     }

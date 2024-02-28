@@ -10,11 +10,10 @@
     tools:context=".fragments.FeedsFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TIL_feeds_search"
+        android:id="@+id/feeds_search"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         style="@style/search_textInputLayout_style"
-
         android:layout_margin="16dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -41,6 +40,7 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager_feeds"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="65dp"/>
 
 </LinearLayout>
