@@ -7,35 +7,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:padding="16dp"
     tools:context=".FeedsFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TIL_feeds_search"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginBottom="16dp"
-        app:boxCornerRadiusBottomEnd="10dp"
-        app:boxCornerRadiusTopEnd="10dp"
-        app:boxCornerRadiusTopStart="10dp"
-        app:boxCornerRadiusBottomStart="10dp"
-        android:hint="@string/search"
-        android:textColorHint="@color/gray"
-        android:selectAllOnFocus="true"
-        app:boxStrokeColor="@color/gray_light"
-        app:boxStrokeWidth="1dp"
-        app:boxBackgroundColor="@color/gray_light"
-        app:startIconDrawable="@drawable/ic_search">
+        android:layout_height="50dp"
+        style="@style/search_textInputLayout_style"
+
+        android:layout_margin="16dp">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout_feeds"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="ViewPager"
+        android:layout_marginHorizontal="16dp"
+        android:contentDescription="@string/tablayout"
         android:background="@color/white"
         app:tabTextColor="@color/gray"
         app:tabSelectedTextColor="@color/black"
@@ -46,6 +41,6 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager_feeds"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

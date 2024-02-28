@@ -7,17 +7,13 @@
     android:orientation="vertical"
     tools:context=".FeedsNewFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/New"
-        android:textSize="30sp"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_feeds_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:contentDescription="@string/New"
+        android:layout_gravity="center_horizontal"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_feeds" />
