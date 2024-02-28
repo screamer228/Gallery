@@ -1,6 +1,5 @@
 package com.example.gallery.fragment_sign_in
 
-import com.example.gallery.repository.RoomRepository
 import com.example.gallery.validation.ValidationSignIn
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -9,7 +8,6 @@ import javax.inject.Inject
 
 
 class SignInPresenter @Inject constructor(
-    private val roomRepository: RoomRepository,
     private val validationSignIn: ValidationSignIn
 ) : MvpPresenter<SignInView>() {
 
@@ -21,6 +19,10 @@ class SignInPresenter @Inject constructor(
 
     fun signUpClicked() {
         viewState.showSignUpScreen()
+    }
+
+    fun cancelClicked(){
+        viewState.showWelcomeScreen()
     }
 
     private suspend fun validateUserData(email: String, password: String

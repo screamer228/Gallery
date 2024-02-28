@@ -9,14 +9,25 @@
     android:background="@color/white"
     tools:context=".fragment_sign_up.SignUpFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/signUp_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:title="Cancel"
-        app:titleTextColor="@color/blue"
-        app:navigationIcon="@drawable/ic_back"
-        app:navigationIconTint="@color/blue"/>
+    <LinearLayout
+        android:id="@+id/signUp_cancel"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_cancel"/>
+    </LinearLayout>
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
@@ -39,7 +50,7 @@
             android:layout_marginBottom="5dp"
             android:text="@string/sign_up"
             android:textStyle="bold"
-            android:textSize="30sp"
+            android:textSize="@dimen/text_size_H1"
             android:textColor="@color/black" />
 
         <com.google.android.material.divider.MaterialDivider
@@ -143,22 +154,23 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:backgroundTint="@color/black"
             android:enabled="true"
             android:text="@string/sign_up"
-            android:backgroundTint="@color/black"
+            android:textSize="@dimen/text_size_H4"
             android:textColor="@color/white"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="@dimen/corner_radius"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_signUp_signIn"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
             android:enabled="true"
             android:text="@string/sign_in"
-            android:backgroundTint="@color/white"
+            android:textSize="@dimen/text_size_H4"
             android:textColor="@color/black"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="@dimen/corner_radius"/>
 
     </LinearLayout>
-
 </LinearLayout>

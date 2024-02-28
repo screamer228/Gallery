@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignInBinding
-import com.google.android.material.appbar.MaterialToolbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import moxy.MvpAppCompatFragment
@@ -41,16 +39,13 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<MaterialToolbar>(R.id.signIn_toolbar)
-        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-        }
+        clickListeners()
+    }
 
-        toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
+    private fun clickListeners(){
+        binding.signInCancel.setOnClickListener {
+            presenter.cancelClicked()
         }
-
 
         binding.buttonSignInSignIn.setOnClickListener {
             lifecycleScope.launch {
@@ -69,11 +64,12 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
     override fun showMainScreen() {
         findNavController().navigate(R.id.action_signInFragment_to_mainFragment)
     }
-
     override fun showSignUpScreen() {
-        findNavController().navigate(R.id.action_signInFragment_to_signUpFragment2)
+        findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
     }
-
+    override fun showWelcomeScreen() {
+        findNavController().navigate(R.id.action_signInFragment_to_welcomeFragment)
+    }
     override fun showUserInsertionError(state: SignInViewState) {
         when (state) {
 

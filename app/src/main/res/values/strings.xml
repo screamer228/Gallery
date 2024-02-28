@@ -8,8 +8,8 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
 
-    <string name="sign_in">Sign in</string>
-    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
     <string name="welcome">"Welcome!"</string>
     <string name="login_failed">"Login failed"</string>
     <string name="welcome_to_gallery">Welcome to Gallery!</string>
@@ -30,4 +30,5 @@
     <string name="invalid_password">invalid password</string>
     <string name="user_not_found">user not found</string>
     <string name="tablayout">TabLayout</string>
+    <string name="cancel">Cancel</string>
 </resources>

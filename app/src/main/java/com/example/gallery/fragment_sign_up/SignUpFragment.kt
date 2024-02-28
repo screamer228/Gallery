@@ -4,13 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignUpBinding
-import com.example.gallery.model.User
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -49,14 +46,12 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val toolbar = view.findViewById<MaterialToolbar>(R.id.signUp_toolbar)
-        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-        }
+        clickListeners()
+    }
 
-        toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
+    private fun clickListeners(){
+        binding.signUpCancel.setOnClickListener {
+            presenter.cancelClicked()
         }
 
         binding.signUpBirthday.editText?.setOnClickListener {
@@ -80,6 +75,7 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
             presenter.signInClicked()
         }
     }
+
     private fun showDatePicker() {
         val builder = MaterialDatePicker.Builder.datePicker()
         val picker = builder.build()
@@ -91,12 +87,17 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         }
         picker.show(parentFragmentManager, picker.toString())
     }
+
     override fun showMainScreen() {
         findNavController().navigate(R.id.action_signUpFragment_to_mainFragment)
     }
     override fun showSignInScreen() {
-        findNavController().navigate(R.id.action_signUpFragment_to_signInFragment2)
+        findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
     }
+    override fun showWelcomeScreen() {
+        findNavController().navigate(R.id.action_signUpFragment_to_welcomeFragment)
+    }
+
     override fun showUserInsertionError(state: SignUpViewState) {
         when (state) {
             is SignUpViewState.UserName -> {

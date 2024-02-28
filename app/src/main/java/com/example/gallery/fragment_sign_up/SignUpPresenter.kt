@@ -45,6 +45,10 @@ class SignUpPresenter @Inject constructor(
         viewState.showSignInScreen()
     }
 
+    fun cancelClicked(){
+        viewState.showWelcomeScreen()
+    }
+
     private suspend fun validateUserData(
         userName: String,
         phoneNumber: String,

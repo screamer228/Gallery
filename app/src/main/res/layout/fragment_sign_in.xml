@@ -11,14 +11,25 @@
     android:background="@color/white"
     tools:context=".fragment_sign_in.SignInFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/signIn_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:title="Cancel"
-        app:titleTextColor="@color/blue"
-        app:navigationIcon="@drawable/ic_back"
-        app:navigationIconTint="@color/blue"/>
+    <LinearLayout
+        android:id="@+id/signIn_cancel"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_cancel"/>
+    </LinearLayout>
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
@@ -41,7 +52,7 @@
             android:layout_marginBottom="5dp"
             android:text="@string/sign_in"
             android:textStyle="bold"
-            android:textSize="30sp"
+            android:textSize="@dimen/text_size_H1"
             android:textColor="@color/black" />
 
         <com.google.android.material.divider.MaterialDivider
@@ -86,9 +97,10 @@
             android:layout_marginTop="40dp"
             android:enabled="true"
             android:text="@string/sign_in"
+            android:textSize="@dimen/text_size_H4"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="@dimen/corner_radius"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_signIn_signUp"
@@ -96,26 +108,10 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:text="@string/sign_up"
+            android:textSize="@dimen/text_size_H4"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
-            app:cornerRadius="10dp"/>
-
-        <ProgressBar
-            android:id="@+id/loading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="64dp"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/password"
-            app:layout_constraintStart_toStartOf="@+id/password"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:cornerRadius="@dimen/corner_radius"/>
 
     </LinearLayout>
-
 </LinearLayout>
