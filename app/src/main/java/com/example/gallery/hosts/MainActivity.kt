@@ -1,9 +1,9 @@
-package com.example.gallery
+package com.example.gallery.hosts
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gallery.R
 import com.example.gallery.databinding.ActivityMainBinding
-import com.google.android.material.appbar.MaterialToolbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

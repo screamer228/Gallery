@@ -1,4 +1,4 @@
-package com.example.gallery.fragment_sign_up
+package com.example.gallery.fragments.fragment_sign_up
 
 import com.example.gallery.validation.ValidationSignUp
 import com.example.gallery.model.User

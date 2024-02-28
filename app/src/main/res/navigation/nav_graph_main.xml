@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/feedsFragment"
-        android:name="com.example.gallery.FeedsFragment"
+        android:name="com.example.gallery.fragments.FeedsFragment"
         android:label="fragment_feeds"
         tools:layout="@layout/fragment_feeds" />
     <fragment
         android:id="@+id/addPhotoFragment"
-        android:name="com.example.gallery.AddPhotoFragment"
+        android:name="com.example.gallery.fragments.AddPhotoFragment"
         android:label="fragment_add_photo"
         tools:layout="@layout/fragment_add_photo" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.gallery.ProfileFragment"
+        android:name="com.example.gallery.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

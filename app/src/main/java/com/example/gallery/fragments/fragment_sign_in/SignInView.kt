@@ -1,4 +1,4 @@
-package com.example.gallery.fragment_sign_in
+package com.example.gallery.fragments.fragment_sign_in
 
 import moxy.MvpView
 import moxy.viewstate.strategy.OneExecutionStateStrategy

@@ -1,4 +1,4 @@
-package com.example.gallery
+package com.example.gallery.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.example.gallery.R
 import com.example.gallery.adapters.ViewPagerAdapter
 import com.example.gallery.databinding.FragmentFeedsBinding
 import com.google.android.material.tabs.TabLayout

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".fragment_sign_up.SignUpFragment">
+    tools:context=".fragments.fragment_sign_up.SignUpFragment">
 
     <LinearLayout
         android:id="@+id/signUp_cancel"
@@ -124,6 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/textInputLayout_style"
+            app:endIconMode="password_toggle"
             app:endIconDrawable="@drawable/ic_eye_on">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -139,6 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/textInputLayout_style"
+            app:endIconMode="password_toggle"
             app:endIconDrawable="@drawable/ic_eye_on">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

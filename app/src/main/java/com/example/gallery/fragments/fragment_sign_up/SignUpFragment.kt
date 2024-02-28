@@ -1,9 +1,11 @@
-package com.example.gallery.fragment_sign_up
+package com.example.gallery.fragments.fragment_sign_up
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
@@ -73,6 +75,30 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
 
         binding.buttonSignUpSignIn.setOnClickListener {
             presenter.signInClicked()
+        }
+
+        //переключение видимости пароля
+        binding.signUpPassword.setEndIconOnClickListener {
+            val editTextPassword = binding.signUpPassword.editText
+            val isPasswordVisible = editTextPassword?.inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
+            editTextPassword?.inputType =
+                if (isPasswordVisible) InputType.TYPE_TEXT_VARIATION_PASSWORD
+                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            val endIconDrawable =
+                if (isPasswordVisible) R.drawable.ic_eye_off
+                else R.drawable.ic_eye_on
+            binding.signUpPassword.endIconDrawable = ContextCompat.getDrawable(requireContext(), endIconDrawable)
+        }
+        binding.signUpConfirmPassword.setEndIconOnClickListener {
+            val editTextPassword = binding.signUpConfirmPassword.editText
+            val isPasswordVisible = editTextPassword?.inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
+            editTextPassword?.inputType =
+                if (isPasswordVisible) InputType.TYPE_TEXT_VARIATION_PASSWORD
+                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            val endIconDrawable =
+                if (isPasswordVisible) R.drawable.ic_eye_off
+                else R.drawable.ic_eye_on
+            binding.signUpConfirmPassword.endIconDrawable = ContextCompat.getDrawable(requireContext(), endIconDrawable)
         }
     }
 

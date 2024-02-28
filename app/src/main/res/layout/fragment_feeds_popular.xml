@@ -32,9 +32,10 @@
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
             android:text="@string/sorry"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_H5"/>
+            android:textSize="@dimen/text_size_H4"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"

@@ -1,15 +1,13 @@
-package com.example.gallery
+package com.example.gallery.hosts
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.gallery.R
 import com.example.gallery.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,7 +30,8 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val bottomNavigationView = binding.bottomNavigationView
-        val navController = (childFragmentManager.findFragmentById(R.id.mainFragmentContainerView
+        val navController = (childFragmentManager.findFragmentById(
+            R.id.mainFragmentContainerView
         ) as NavHostFragment).navController
         bottomNavigationView.setupWithNavController(navController)
     }

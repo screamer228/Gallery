@@ -1,4 +1,4 @@
-package com.example.gallery.fragment_sign_in
+package com.example.gallery.fragments.fragment_sign_in
 
 import com.example.gallery.validation.ValidationSignIn
 import kotlinx.coroutines.Dispatchers

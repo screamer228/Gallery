@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".FeedsFragment">
+    tools:context=".fragments.FeedsFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TIL_feeds_search"
