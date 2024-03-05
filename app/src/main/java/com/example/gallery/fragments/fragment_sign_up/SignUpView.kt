@@ -11,4 +11,6 @@ interface SignUpView : MvpView {
     fun showSignInScreen()
     fun showWelcomeScreen()
     fun showUserInsertionError(state: SignUpViewState)
+    fun setPasswordEndIconOff()
+    fun setPasswordEndIconOn()
 }

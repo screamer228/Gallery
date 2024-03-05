@@ -61,45 +61,30 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         }
 
         binding.buttonSignUpSignUp.setOnClickListener {
-            lifecycleScope.launch{
-                presenter.signUpClicked(
-                    userName = binding.signUpUsername.editText?.text.toString(),
-                    birthday = binding.signUpBirthday.editText?.text.toString(),
-                    phoneNumber = binding.signUpPhone.editText?.text.toString(),
-                    email = binding.signUpEmail.editText?.text.toString(),
-                    password = binding.signUpPassword.editText?.text.toString(),
-                    confirmPassword = binding.signUpConfirmPassword.editText?.text.toString()
-                )
-            }
+            presenter.signUpClicked(
+                userName = binding.signUpUsername.editText?.text.toString(),
+                birthday = binding.signUpBirthday.editText?.text.toString(),
+                phoneNumber = binding.signUpPhone.editText?.text.toString(),
+                email = binding.signUpEmail.editText?.text.toString(),
+                password = binding.signUpPassword.editText?.text.toString(),
+                confirmPassword = binding.signUpConfirmPassword.editText?.text.toString()
+            )
         }
 
         binding.buttonSignUpSignIn.setOnClickListener {
             presenter.signInClicked()
         }
 
-        //переключение видимости пароля
         binding.signUpPassword.setEndIconOnClickListener {
-            val editTextPassword = binding.signUpPassword.editText
-            val isPasswordVisible = editTextPassword?.inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
-            editTextPassword?.inputType =
-                if (isPasswordVisible) InputType.TYPE_TEXT_VARIATION_PASSWORD
-                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            val endIconDrawable =
-                if (isPasswordVisible) R.drawable.ic_eye_off
-                else R.drawable.ic_eye_on
-            binding.signUpPassword.endIconDrawable = ContextCompat.getDrawable(requireContext(), endIconDrawable)
+            presenter.passwordEndIconClicked()
         }
-        binding.signUpConfirmPassword.setEndIconOnClickListener {
-            val editTextPassword = binding.signUpConfirmPassword.editText
-            val isPasswordVisible = editTextPassword?.inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
-            editTextPassword?.inputType =
-                if (isPasswordVisible) InputType.TYPE_TEXT_VARIATION_PASSWORD
-                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            val endIconDrawable =
-                if (isPasswordVisible) R.drawable.ic_eye_off
-                else R.drawable.ic_eye_on
-            binding.signUpConfirmPassword.endIconDrawable = ContextCompat.getDrawable(requireContext(), endIconDrawable)
-        }
+    }
+
+    override fun setPasswordEndIconOff(){
+        binding.signUpPassword.setEndIconDrawable(R.drawable.ic_eye_off)
+    }
+    override fun setPasswordEndIconOn(){
+        binding.signUpPassword.setEndIconDrawable(R.drawable.ic_eye_on)
     }
 
     private fun showDatePicker() {

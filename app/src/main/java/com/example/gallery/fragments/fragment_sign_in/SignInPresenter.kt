@@ -1,7 +1,10 @@
 package com.example.gallery.fragments.fragment_sign_in
 
+import androidx.lifecycle.lifecycleScope
 import com.example.gallery.validation.ValidationSignIn
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import moxy.MvpPresenter
 import javax.inject.Inject
@@ -11,9 +14,14 @@ class SignInPresenter @Inject constructor(
     private val validationSignIn: ValidationSignIn
 ) : MvpPresenter<SignInView>() {
 
-    suspend fun signInClicked(email: String, password: String) {
-        if (validateUserData(email, password)) {
-            viewState.showMainScreen()
+    //флаг видимости пароля для смены иконки
+    private var isAddIcon = true
+
+    fun signInClicked(email: String, password: String) {
+        CoroutineScope(Dispatchers.Main).launch{
+            if (validateUserData(email, password)) {
+                viewState.showMainScreen()
+            }
         }
     }
 
@@ -35,5 +43,18 @@ class SignInPresenter @Inject constructor(
         viewState.showUserInsertionError(SignInViewState.Password(passwordError))
 
         return@withContext (emailError == null) && (passwordError == null)
+    }
+
+    fun passwordEndIconClicked(){
+        isAddIcon = when (isAddIcon) {
+            true -> {
+                viewState.setPasswordEndIconOff()
+                false
+            }
+            false -> {
+                viewState.setPasswordEndIconOn()
+                true
+            }
+        }
     }
 }

@@ -3,7 +3,9 @@ package com.example.gallery.fragments.fragment_sign_up
 import com.example.gallery.validation.ValidationSignUp
 import com.example.gallery.model.User
 import com.example.gallery.repository.RoomRepository
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import moxy.MvpPresenter
 import javax.inject.Inject
@@ -14,7 +16,10 @@ class SignUpPresenter @Inject constructor(
     private val validationSignUp: ValidationSignUp
 ) : MvpPresenter<SignUpView>() {
 
-    suspend fun signUpClicked(
+    //флаг видимости пароля для смены иконки
+    private var isAddIcon = true
+
+    fun signUpClicked(
         userName: String,
         birthday: String?,
         phoneNumber: String,
@@ -22,22 +27,24 @@ class SignUpPresenter @Inject constructor(
         password: String,
         confirmPassword: String
     ) {
-        if (validateUserData(
-            userName,
-            phoneNumber,
-            email,
-            password,
-            confirmPassword
-        )) {
-            val user = User(
-                userName,
-                birthday,
-                phoneNumber,
-                email,
-                password
-            )
-            roomRepository.insertUser(user)
-            viewState.showMainScreen()
+        CoroutineScope(Dispatchers.Main).launch{
+            if (validateUserData(
+                    userName,
+                    phoneNumber,
+                    email,
+                    password,
+                    confirmPassword
+                )) {
+                val user = User(
+                    userName,
+                    birthday,
+                    phoneNumber,
+                    email,
+                    password
+                )
+                roomRepository.insertUser(user)
+                viewState.showMainScreen()
+            }
         }
     }
 
@@ -73,4 +80,16 @@ class SignUpPresenter @Inject constructor(
                     && emailError == null && passwordError == null
                     && confirmPasswordError == null
         }
+    fun passwordEndIconClicked(){
+        isAddIcon = when (isAddIcon) {
+            true -> {
+                viewState.setPasswordEndIconOff()
+                false
+            }
+            false -> {
+                viewState.setPasswordEndIconOn()
+                true
+            }
+        }
+    }
 }

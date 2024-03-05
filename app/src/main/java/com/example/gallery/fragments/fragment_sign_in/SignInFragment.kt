@@ -1,17 +1,13 @@
 package com.example.gallery.fragments.fragment_sign_in
 
 import android.os.Bundle
-import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignInBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import javax.inject.Inject
@@ -50,30 +46,26 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
         }
 
         binding.buttonSignInSignIn.setOnClickListener {
-            lifecycleScope.launch {
-                presenter.signInClicked(
-                    email = binding.signInEmail.editText?.text.toString(),
-                    password = binding.signInPassword.editText?.text.toString()
-                )
-            }
+            presenter.signInClicked(
+                email = binding.signInEmail.editText?.text.toString(),
+                password = binding.signInPassword.editText?.text.toString()
+            )
         }
 
         binding.buttonSignInSignUp.setOnClickListener {
             presenter.signUpClicked()
         }
 
-        //переключение видимости пароля
         binding.signInPassword.setEndIconOnClickListener {
-            val editTextPassword = binding.signInPassword.editText
-            val isPasswordVisible = editTextPassword?.inputType != InputType.TYPE_TEXT_VARIATION_PASSWORD
-            editTextPassword?.inputType =
-                if (isPasswordVisible) InputType.TYPE_TEXT_VARIATION_PASSWORD
-                else InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            val endIconDrawable =
-                if (isPasswordVisible) R.drawable.ic_eye_off
-                else R.drawable.ic_eye_on
-            binding.signInPassword.endIconDrawable = ContextCompat.getDrawable(requireContext(), endIconDrawable)
+            presenter.passwordEndIconClicked()
         }
+    }
+
+    override fun setPasswordEndIconOff(){
+        binding.signInPassword.setEndIconDrawable(R.drawable.ic_eye_off)
+    }
+    override fun setPasswordEndIconOn(){
+        binding.signInPassword.setEndIconDrawable(R.drawable.ic_eye_on)
     }
 
     override fun showMainScreen() {
