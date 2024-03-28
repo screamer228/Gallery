@@ -7,7 +7,7 @@ import com.example.gallery.model.User
 import javax.inject.Inject
 
 class RoomRepositoryImpl @Inject constructor(
-    private val userDao: UserDao, private val userMapper : UserMapper
+    private val userDao: UserDao, private val userMapper: UserMapper
 ) : RoomRepository {
 
 

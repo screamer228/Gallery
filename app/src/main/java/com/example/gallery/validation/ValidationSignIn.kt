@@ -32,14 +32,12 @@ class ValidationSignIn(
             user = databaseRepository.getUser(email)
         }
 
-        return if (user == null){
+        return if (user == null) {
             context.getString(R.string.invalid_password)
-        }
-        else {
+        } else {
             if (user.password != password) {
                 context.getString(R.string.invalid_password)
-            }
-            else {
+            } else {
                 null
             }
         }

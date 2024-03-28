@@ -42,7 +42,7 @@ class FeedsNewFragment : Fragment() {
             binding.feedsNewLoadingContainer.visibility = VISIBLE
             delay(2000)
             val imagesList = ImagesDataList.getImages()
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 adapter.updateList(imagesList)
                 binding.feedsNewLoadingContainer.visibility = INVISIBLE
             }

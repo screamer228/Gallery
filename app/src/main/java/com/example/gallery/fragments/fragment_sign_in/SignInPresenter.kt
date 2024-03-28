@@ -1,6 +1,5 @@
 package com.example.gallery.fragments.fragment_sign_in
 
-import androidx.lifecycle.lifecycleScope
 import com.example.gallery.validation.ValidationSignIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,7 +17,7 @@ class SignInPresenter @Inject constructor(
     private var isAddIcon = true
 
     fun signInClicked(email: String, password: String) {
-        CoroutineScope(Dispatchers.Main).launch{
+        CoroutineScope(Dispatchers.Main).launch {
             if (validateUserData(email, password)) {
                 viewState.showMainScreen()
             }
@@ -29,11 +28,12 @@ class SignInPresenter @Inject constructor(
         viewState.showSignUpScreen()
     }
 
-    fun cancelClicked(){
+    fun cancelClicked() {
         viewState.showWelcomeScreen()
     }
 
-    private suspend fun validateUserData(email: String, password: String
+    private suspend fun validateUserData(
+        email: String, password: String
     ): Boolean = withContext(Dispatchers.Main) {
 
         val emailError = validationSignIn.validateUsername(email)
@@ -45,12 +45,13 @@ class SignInPresenter @Inject constructor(
         return@withContext (emailError == null) && (passwordError == null)
     }
 
-    fun passwordEndIconClicked(){
+    fun passwordEndIconClicked() {
         isAddIcon = when (isAddIcon) {
             true -> {
                 viewState.setPasswordEndIconOff()
                 false
             }
+
             false -> {
                 viewState.setPasswordEndIconOn()
                 true

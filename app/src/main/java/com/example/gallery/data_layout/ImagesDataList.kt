@@ -2,7 +2,7 @@ package com.example.gallery.data_layout
 
 object ImagesDataList {
 
-    fun getImages() : List<String> {
+    fun getImages(): List<String> {
         return listOf(
             "https://s3-alpha-sig.figma.com/img/03cf/2142/c00f61d88b72d9074801db979dbfc693?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qS0oz2ZK1vlzw91i92nev8oI8KTLzOpEyPEUJVKy5cWeKT8r38mXE3PZW9lhhr6DVs8BgRGb9KHacQ4N0uDRNDA1LocJ1lmFcWg8mXCVNemJYGmeqVxmd0Pqg4dZw4IwQSnLRPjp4npJViY-onGRLJ5r50KSNsOcG4qv63g4s4Wd49gdEm0WCUuPiNEO-XqNiawgJpqzi0wmAsnfdmZN2e2VkTEtm8qmQZBKIsKjzR9v~2IAV6SCYdqw1J~1dGMjl-Y1h0U0m8MiY0yjZt6fN4HMoNi~gV5N7UyjwZcIp3PWPU0VhZ917EpM9~5AW5Md0SOyqUbyMGNfV~iO3NXZPA__",
             "https://s3-alpha-sig.figma.com/img/5ef0/14d5/67b67a32e640c5c78549160b0e86558c?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RaK6Qgxpd6zoM27lk27ffMkYeH2~ixkKGxN78KCnrTncjDnk1XLAhyXsETZkNufQLchpAn6~eE4YTRfwHLvjTbqlSVEq~rsSDadmO69r1Sei5ibAmyfhGZ-i5S6LYFMR5o0iYxXBwD~vBmwVgzdGEcQ537casbdUDnOBuyqdUAFWxs3Ecy2enPMdIZ0XRMkuH~1H1efVu1JZjEto4dANn8QZkw0W4WCeEwjR-j5q8EP1EQIxNWeA10lW~OxeRQ5hk6Xhrh75xkhDW~XxefNizgKJN-BUUm3NoI1fherEA7w~neU9FhOAuZuFM~PxN1CoU8lK-5aVOocZbpMJ5wGTxQ__",
@@ -16,6 +16,6 @@ object ImagesDataList {
             "https://s3-alpha-sig.figma.com/img/5102/e65f/1839c8acc324376f7bd5a92099c09007?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MRCWA-WW~dSsh6lXo28DlvhJ-bfZwalaxdoxkPd9Vm3yzRnlx0wU7G4DbRlD6mlqixPyNWL3x2KhZ6v5tU63gVRWvADtGHPjISHs8-GrtI~FrvJB0a4V4wfCOVJsNauWWfVKoMNoECoqN4O2Fce3VLqOY2g9lu5j5U0yqQJHWJDbh8ImA4ytoc7QjJtFktPpOMVq361r5EEybazZIBBBYIzWkT9Jt1OTx6VX0P9F9lE6a28JCtIpBUAQR-rd7CXq4nxNhuC7naErG9Y58bvg1yqazp~U-mjDy2ShFFVssBPfBqSzaH9f2jgNwXfZAxJGdw1Uom54ktqnF-4SId3xug__",
             "https://s3-alpha-sig.figma.com/img/a712/6481/6643798c530edb307180f2759b6e527a?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RcZ7vJFkHbVw~aKAofyIYwIuSvlvALuBgVKfQpj8kZATj5MtEVRAfPPIXbDJrRJ6CBrkCEW574yEVTACw0YXfiBxbAjq58i73Ii-Oecq7Nf02s4rE5lyHeDnz4XQaXUSIbuliNnUPrTu3O6sZK0uwFprdOcW0P1bCduRpKU50rfPGAf15zBpTc9XfxI-ylj~bQYKBK5yZBcpaq04p5bQyjbjChXAL7rLzuu2QV8CcGQwlRKTg1QI-us6hnWoyg1kyy8AlYRSAI88bGdC-eFXRy3xGGrk6F65V5XNFG3EjQpTh8kq8n2pdj8xias-RhX4bgz2vtS2s0yat-nmNeJpDQ__",
             "https://s3-alpha-sig.figma.com/img/f9cb/d0d8/9a56603ca6e3395dce1bf4a30726a0f0?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DXiOAEYKB9AKXudxu66b-X4UjQUvoLWr4QG0RGYs~Qd9rA~vwOsvE2BxgtYC3X5VYFeoAeRdNqe72PcXsz4CW1OqLGFGx6C~wY7NWG7rHiuAsxxHMvBusUoi~G1BQ6tKwacFAOOkUKleds300VszQH2FpwJ~jSLg499PKLFvh6D9AeXCddY0FngNFi4eLPafhWpwfMaJ8PPsl0VsIpZ9rvOBjytSPkUIIAIR7TgDPaxsGdmEBtqv3UGA8ujZQDDVEiBSBKM~m5qVFlEelYsJbEufq6ppZHIwVcvwATJyPwUNi-btCGPlIGxBFY-EvruLAvm5XPKdBPrk3oNn7LWRtw__"
-            )
+        )
     }
 }

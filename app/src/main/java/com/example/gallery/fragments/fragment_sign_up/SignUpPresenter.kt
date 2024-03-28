@@ -27,14 +27,15 @@ class SignUpPresenter @Inject constructor(
         password: String,
         confirmPassword: String
     ) {
-        CoroutineScope(Dispatchers.Main).launch{
+        CoroutineScope(Dispatchers.Main).launch {
             if (validateUserData(
                     userName,
                     phoneNumber,
                     email,
                     password,
                     confirmPassword
-                )) {
+                )
+            ) {
                 val user = User(
                     userName,
                     birthday,
@@ -52,7 +53,7 @@ class SignUpPresenter @Inject constructor(
         viewState.showSignInScreen()
     }
 
-    fun cancelClicked(){
+    fun cancelClicked() {
         viewState.showWelcomeScreen()
     }
 
@@ -62,30 +63,33 @@ class SignUpPresenter @Inject constructor(
         email: String,
         password: String,
         confirmPassword: String,
-        ): Boolean = withContext(Dispatchers.Main) {
+    ): Boolean = withContext(Dispatchers.Main) {
 
-            val userNameError = validationSignUp.validateUserName(userName)
-            val phoneNumberError = validationSignUp.validatePhoneNumber(phoneNumber)
-            val emailError = validationSignUp.validateEmail(email)
-            val passwordError = validationSignUp.validatePassword(password)
-            val confirmPasswordError = validationSignUp.validateConfirmPassword(password, confirmPassword)
+        val userNameError = validationSignUp.validateUserName(userName)
+        val phoneNumberError = validationSignUp.validatePhoneNumber(phoneNumber)
+        val emailError = validationSignUp.validateEmail(email)
+        val passwordError = validationSignUp.validatePassword(password)
+        val confirmPasswordError =
+            validationSignUp.validateConfirmPassword(password, confirmPassword)
 
-            viewState.showUserInsertionError(SignUpViewState.UserName(userNameError))
-            viewState.showUserInsertionError(SignUpViewState.Phone(phoneNumberError))
-            viewState.showUserInsertionError(SignUpViewState.Email(emailError))
-            viewState.showUserInsertionError(SignUpViewState.Password(passwordError))
-            viewState.showUserInsertionError(SignUpViewState.ConfirmPassword(confirmPasswordError))
+        viewState.showUserInsertionError(SignUpViewState.UserName(userNameError))
+        viewState.showUserInsertionError(SignUpViewState.Phone(phoneNumberError))
+        viewState.showUserInsertionError(SignUpViewState.Email(emailError))
+        viewState.showUserInsertionError(SignUpViewState.Password(passwordError))
+        viewState.showUserInsertionError(SignUpViewState.ConfirmPassword(confirmPasswordError))
 
-            return@withContext userNameError == null && phoneNumberError == null
-                    && emailError == null && passwordError == null
-                    && confirmPasswordError == null
-        }
-    fun passwordEndIconClicked(){
+        return@withContext userNameError == null && phoneNumberError == null
+                && emailError == null && passwordError == null
+                && confirmPasswordError == null
+    }
+
+    fun passwordEndIconClicked() {
         isAddIcon = when (isAddIcon) {
             true -> {
                 viewState.setPasswordEndIconOff()
                 false
             }
+
             false -> {
                 viewState.setPasswordEndIconOn()
                 true

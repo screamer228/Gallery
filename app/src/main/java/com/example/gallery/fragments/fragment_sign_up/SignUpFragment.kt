@@ -1,18 +1,14 @@
 package com.example.gallery.fragments.fragment_sign_up
 
 import android.os.Bundle
-import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.gallery.R
 import com.example.gallery.databinding.FragmentSignUpBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import java.text.SimpleDateFormat
@@ -51,7 +47,7 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         clickListeners()
     }
 
-    private fun clickListeners(){
+    private fun clickListeners() {
         binding.signUpCancel.setOnClickListener {
             presenter.cancelClicked()
         }
@@ -80,10 +76,11 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
         }
     }
 
-    override fun setPasswordEndIconOff(){
+    override fun setPasswordEndIconOff() {
         binding.signUpPassword.setEndIconDrawable(R.drawable.ic_eye_off)
     }
-    override fun setPasswordEndIconOn(){
+
+    override fun setPasswordEndIconOn() {
         binding.signUpPassword.setEndIconDrawable(R.drawable.ic_eye_on)
     }
 
@@ -102,9 +99,11 @@ class SignUpFragment : MvpAppCompatFragment(), SignUpView {
     override fun showMainScreen() {
         findNavController().navigate(R.id.action_signUpFragment_to_mainFragment)
     }
+
     override fun showSignInScreen() {
         findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
     }
+
     override fun showWelcomeScreen() {
         findNavController().navigate(R.id.action_signUpFragment_to_welcomeFragment)
     }

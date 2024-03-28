@@ -23,7 +23,8 @@ class FeedsRecyclerAdapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemFeedsBinding.inflate(
             LayoutInflater.from(parent.context),
-            parent, false)
+            parent, false
+        )
         return ViewHolder(binding)
     }
 
@@ -31,11 +32,12 @@ class FeedsRecyclerAdapter
         val item = dataList[position]
         holder.bind(item)
     }
+
     override fun getItemCount(): Int {
         return dataList.size
     }
 
-    fun updateList(imagesList: List<String>){
+    fun updateList(imagesList: List<String>) {
         dataList = imagesList.toMutableList()
         notifyDataSetChanged()
     }

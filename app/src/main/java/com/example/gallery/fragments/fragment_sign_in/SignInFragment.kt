@@ -40,7 +40,7 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
         clickListeners()
     }
 
-    private fun clickListeners(){
+    private fun clickListeners() {
         binding.signInCancel.setOnClickListener {
             presenter.cancelClicked()
         }
@@ -61,22 +61,26 @@ class SignInFragment : MvpAppCompatFragment(), SignInView {
         }
     }
 
-    override fun setPasswordEndIconOff(){
+    override fun setPasswordEndIconOff() {
         binding.signInPassword.setEndIconDrawable(R.drawable.ic_eye_off)
     }
-    override fun setPasswordEndIconOn(){
+
+    override fun setPasswordEndIconOn() {
         binding.signInPassword.setEndIconDrawable(R.drawable.ic_eye_on)
     }
 
     override fun showMainScreen() {
         findNavController().navigate(R.id.action_signInFragment_to_mainFragment)
     }
+
     override fun showSignUpScreen() {
         findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
     }
+
     override fun showWelcomeScreen() {
         findNavController().navigate(R.id.action_signInFragment_to_welcomeFragment)
     }
+
     override fun showUserInsertionError(state: SignInViewState) {
         when (state) {
 

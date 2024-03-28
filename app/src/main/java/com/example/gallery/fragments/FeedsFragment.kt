@@ -18,8 +18,8 @@ class FeedsFragment : Fragment() {
 
     private lateinit var _binding: FragmentFeedsBinding
     private val binding get() = _binding
-    private lateinit var tabLayout : TabLayout
-    private lateinit var viewPager : ViewPager2
+    private lateinit var tabLayout: TabLayout
+    private lateinit var viewPager: ViewPager2
 
 
     override fun onCreateView(
@@ -49,8 +49,7 @@ class FeedsFragment : Fragment() {
 
         viewPager.adapter = ViewPagerAdapter(requireActivity(), fragmentList)
 
-        TabLayoutMediator(tabLayout, viewPager) {
-                tab, position ->
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTitleArray[position]
         }.attach()
     }
