@@ -1,7 +1,7 @@
 package com.example.gallery.data.mapper
 
 import com.example.gallery.data.entity.UserEntity
-import com.example.gallery.model.User
+import com.example.gallery.presentation.model.User
 
 class UserMapper {
 

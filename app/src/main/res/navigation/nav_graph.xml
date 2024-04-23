@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.gallery.fragments.fragment_sign_in.SignInFragment"
+        android:name="com.example.gallery.presentation.fragments.fragment_sign_in.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.gallery.fragments.WelcomeFragment"
+        android:name="com.example.gallery.presentation.fragments.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.gallery.fragments.fragment_sign_up.SignUpFragment"
+        android:name="com.example.gallery.presentation.fragments.fragment_sign_up.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -55,7 +55,7 @@
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.gallery.fragments.SplashFragment"
+        android:name="com.example.gallery.presentation.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

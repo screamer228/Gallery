@@ -1,4 +1,4 @@
-package com.example.gallery.fragments.fragment_sign_in
+package com.example.gallery.presentation.fragments.fragment_sign_in
 
 import android.os.Bundle
 import android.view.LayoutInflater

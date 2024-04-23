@@ -52,7 +52,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun providesToDoDao(userDatabase: UserDatabase): UserDao = userDatabase.userDao()
+    fun providesUserDao(userDatabase: UserDatabase): UserDao = userDatabase.userDao()
 
     companion object {
         const val DATABASE_NAME = "user-database"

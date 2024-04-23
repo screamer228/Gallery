@@ -1,4 +1,4 @@
-package com.example.gallery.model
+package com.example.gallery.presentation.model
 
 data class User(
     val userName: String,

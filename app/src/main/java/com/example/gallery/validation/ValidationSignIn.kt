@@ -2,7 +2,7 @@ package com.example.gallery.validation
 
 import android.content.Context
 import com.example.gallery.R
-import com.example.gallery.model.User
+import com.example.gallery.presentation.model.User
 import com.example.gallery.repository.RoomRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

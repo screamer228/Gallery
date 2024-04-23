@@ -1,16 +1,16 @@
-package com.example.gallery.fragments.fragment_sign_in
+package com.example.gallery.presentation.fragments.fragment_sign_up
 
 import moxy.MvpView
 import moxy.viewstate.strategy.OneExecutionStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(OneExecutionStateStrategy::class)
-interface SignInView : MvpView {
+interface SignUpView : MvpView {
 
     fun showMainScreen()
-    fun showSignUpScreen()
+    fun showSignInScreen()
     fun showWelcomeScreen()
-    fun showUserInsertionError(state: SignInViewState)
+    fun showUserInsertionError(state: SignUpViewState)
     fun setPasswordEndIconOff()
     fun setPasswordEndIconOn()
 }

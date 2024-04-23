@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".fragments.FeedsNewFragment">
+    tools:context=".presentation.fragments.FeedsNewFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_feeds_new"

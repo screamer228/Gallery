@@ -1,7 +1,7 @@
-package com.example.gallery.fragments.fragment_sign_up
+package com.example.gallery.presentation.fragments.fragment_sign_up
 
 import com.example.gallery.validation.ValidationSignUp
-import com.example.gallery.model.User
+import com.example.gallery.presentation.model.User
 import com.example.gallery.repository.RoomRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

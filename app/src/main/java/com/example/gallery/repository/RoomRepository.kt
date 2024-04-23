@@ -1,6 +1,6 @@
 package com.example.gallery.repository
 
-import com.example.gallery.model.User
+import com.example.gallery.presentation.model.User
 
 interface RoomRepository {
 

@@ -1,4 +1,4 @@
-package com.example.gallery.adapters
+package com.example.gallery.presentation.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

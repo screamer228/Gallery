@@ -1,4 +1,4 @@
-package com.example.gallery.fragments
+package com.example.gallery.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.example.gallery.data_layout.ImagesDataList
-import com.example.gallery.adapters.FeedsRecyclerAdapter
+import com.example.gallery.presentation.adapters.FeedsRecyclerAdapter
 import com.example.gallery.databinding.FragmentFeedsNewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
