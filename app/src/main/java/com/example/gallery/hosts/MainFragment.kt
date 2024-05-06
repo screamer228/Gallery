@@ -29,6 +29,10 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupBottomNavigation()
+    }
+
+    private fun setupBottomNavigation() {
         val bottomNavigationView = binding.bottomNavigationView
         val navController = (childFragmentManager.findFragmentById(
             R.id.mainFragmentContainerView

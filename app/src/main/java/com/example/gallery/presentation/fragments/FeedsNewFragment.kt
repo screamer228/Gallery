@@ -38,6 +38,10 @@ class FeedsNewFragment : Fragment() {
 
         binding.rvFeedsNew.adapter = adapter
 
+        getData()
+    }
+
+    private fun getData() {
         lifecycleScope.launch {
             binding.feedsNewLoadingContainer.visibility = VISIBLE
             delay(2000)
@@ -47,7 +51,6 @@ class FeedsNewFragment : Fragment() {
                 binding.feedsNewLoadingContainer.visibility = INVISIBLE
             }
         }
-
     }
 
     companion object {
