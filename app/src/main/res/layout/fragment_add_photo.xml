@@ -8,8 +8,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:text="@string/add_photo_fragment"
-        android:textSize="@dimen/text_size_H1"
-        android:gravity="center"/>
+        android:textSize="@dimen/text_size_H1" />
 
 </FrameLayout>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".presentation.fragments.FeedsNewFragment">
 
@@ -12,9 +11,9 @@
         android:id="@+id/rv_feeds_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_margin="8dp"
         android:contentDescription="@string/New"
-        android:layout_gravity="center_horizontal"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_feeds" />
@@ -23,24 +22,24 @@
         android:id="@+id/feeds_new_loading_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="invisible"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:paddingBottom="50dp">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="50dp"
+        android:visibility="invisible">
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:indeterminate="true"
             app:indicatorColor="@color/gray"
-            app:trackThickness="1dp"
-            android:indeterminate="true"/>
+            app:trackThickness="1dp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loading"
-            android:textSize="@dimen/text_size_H4"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_H4" />
     </LinearLayout>
 </FrameLayout>

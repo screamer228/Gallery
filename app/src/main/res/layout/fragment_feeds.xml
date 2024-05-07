@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".presentation.fragments.FeedsFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/feeds_search"
+        style="@style/search_textInputLayout_style"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        style="@style/search_textInputLayout_style"
         android:layout_margin="16dp">
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/search"
             android:inputType="text"
             android:maxLines="1"
-            android:singleLine="true"/>
+            android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.tabs.TabLayout
@@ -29,18 +29,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:contentDescription="@string/tablayout"
         android:background="@color/white"
-        app:tabTextColor="@color/gray"
-        app:tabSelectedTextColor="@color/black"
+        android:contentDescription="@string/tablayout"
         app:tabIndicatorColor="@color/error_red"
         app:tabIndicatorFullWidth="true"
-        app:tabIndicatorHeight="2dp"/>
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/gray" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager_feeds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="65dp"/>
+        android:layout_marginBottom="65dp" />
 
 </LinearLayout>

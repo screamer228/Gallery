@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
@@ -10,7 +9,7 @@
         android:id="@+id/signInFragment"
         android:name="com.example.gallery.presentation.fragments.fragment_sign_in.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -25,7 +24,7 @@
         android:id="@+id/welcomeFragment"
         android:name="com.example.gallery.presentation.fragments.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -37,7 +36,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.example.gallery.presentation.fragments.fragment_sign_up.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -57,7 +56,7 @@
         android:id="@+id/splashFragment"
         android:name="com.example.gallery.presentation.fragments.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />

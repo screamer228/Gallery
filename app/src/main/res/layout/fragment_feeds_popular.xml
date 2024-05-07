@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -19,9 +18,9 @@
         android:id="@+id/plug_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
         android:paddingBottom="50dp">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -35,21 +34,21 @@
             android:layout_marginVertical="4dp"
             android:text="@string/sorry"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_H4"/>
+            android:textSize="@dimen/text_size_H4" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_pictures"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_H5"/>
+            android:textSize="@dimen/text_size_H5" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/come_back_later"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_H5"/>
+            android:textSize="@dimen/text_size_H5" />
     </LinearLayout>
 
 </FrameLayout>

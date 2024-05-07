@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/fragment_horizontal_margin"
     android:paddingTop="@dimen/fragment_vertical_margin"
     android:paddingRight="@dimen/fragment_horizontal_margin"
@@ -17,15 +16,15 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_welcome"
-        android:layout_marginBottom="28dp"/>
+        android:layout_marginBottom="28dp"
+        android:src="@drawable/logo_welcome" />
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome_to_gallery"
         android:textSize="@dimen/text_size_H1"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_create_account"
@@ -47,8 +46,8 @@
         android:text="@string/i_already_have_an_account"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_H4"
-        app:strokeWidth="1dp"
+        app:cornerRadius="@dimen/corner_radius"
         app:strokeColor="@color/black"
-        app:cornerRadius="@dimen/corner_radius"/>
+        app:strokeWidth="1dp" />
 
 </LinearLayout>
